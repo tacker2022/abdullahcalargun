@@ -5,6 +5,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { BackgroundMusic } from "@/components/ui/BackgroundMusic";
+import { Analytics } from "@vercel/analytics/next";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -57,6 +58,7 @@ export default function RootLayout({
         <Footer />
         <WhatsAppButton />
         <BackgroundMusic />
+        <Analytics />
       </body>
     </html>
   );
