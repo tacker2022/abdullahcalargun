@@ -19,6 +19,25 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "Abdullah Çalargün | Liderlik & Vizyon",
   description: "Yönetici ruhlu bir liderin düşünceleri, tecrübeleri ve vizyonu.",
+  icons: {
+    icon: '/profile.png',
+    apple: '/profile.png',
+  },
+  openGraph: {
+    title: "Abdullah Çalargün | Liderlik & Vizyon",
+    description: "Yönetici ruhlu bir liderin düşünceleri, tecrübeleri ve vizyonu.",
+    url: 'https://abdullahcalargun.com',
+    siteName: 'Abdullah Çalargün',
+    images: [
+      {
+        url: 'https://abdullahcalargun.com/profile.png',
+        width: 800,
+        height: 600,
+      },
+    ],
+    locale: 'tr_TR',
+    type: 'website',
+  },
 };
 
 export default function RootLayout({

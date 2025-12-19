@@ -14,7 +14,7 @@ export function BackgroundMusic() {
 
     useEffect(() => {
         if (audioRef.current) {
-            audioRef.current.volume = 0.5; // Set volume to 50%
+            audioRef.current.volume = 1.0; // Set volume to 100%
         }
     }, []);
 
