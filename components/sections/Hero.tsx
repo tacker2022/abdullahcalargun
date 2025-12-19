@@ -65,7 +65,7 @@ export function Hero() {
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 0.4, duration: 0.8 }}
-                    className="relative h-[500px] md:h-[600px] w-full hidden md:block"
+                    className="relative h-[400px] md:h-[600px] w-full block mt-8 md:mt-0"
                 >
                     {/* Image Frame */}
                     <div className="absolute inset-0 bg-gray-200 dark:bg-gray-800 rounded-sm overflow-hidden shadow-2xl">
