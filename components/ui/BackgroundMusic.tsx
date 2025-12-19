@@ -9,15 +9,26 @@ export function BackgroundMusic() {
     const audioRef = useRef<HTMLAudioElement | null>(null);
 
     // Erik Satie - Gymnopédie No.1 (Classical/Calm/Public Domain style placeholder)
-    // Source: A common classical piece suitable for leadership/thoughtful atmosphere
-    const musicSrc = "https://ia800504.us.archive.org/11/items/ErikSatieGymnopdieNo.1/Erik%20Satie%20-%20Gymnop%C3%A9die%20No.%201.mp3";
+    // Source: Pixabay (High reliability CDN)
+    const musicSrc = "https://cdn.pixabay.com/audio/2022/10/18/audio_31c2730e64.mp3";
+
+    useEffect(() => {
+        if (audioRef.current) {
+            audioRef.current.volume = 0.5; // Set volume to 50%
+        }
+    }, []);
 
     const togglePlay = () => {
         if (audioRef.current) {
             if (isPlaying) {
                 audioRef.current.pause();
             } else {
-                audioRef.current.play().catch((err) => console.log("Audio play failed:", err));
+                const playPromise = audioRef.current.play();
+                if (playPromise !== undefined) {
+                    playPromise.catch((error) => {
+                        console.error("Audio play failed:", error);
+                    });
+                }
             }
             setIsPlaying(!isPlaying);
         }
@@ -25,7 +36,7 @@ export function BackgroundMusic() {
 
     return (
         <>
-            <audio ref={audioRef} src={musicSrc} loop />
+            <audio ref={audioRef} src={musicSrc} loop crossOrigin="anonymous" />
 
             <motion.button
                 onClick={togglePlay}
