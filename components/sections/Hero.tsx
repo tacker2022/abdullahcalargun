@@ -6,7 +6,7 @@ import { ArrowRight } from "lucide-react";
 
 export function Hero() {
     return (
-        <section className="relative min-h-[90vh] flex items-center justify-center bg-background overflow-hidden">
+        <section className="relative min-h-[90vh] flex items-center justify-center bg-background overflow-hidden pt-32 pb-12 md:py-0">
             {/* Background Decor */}
             <div className="absolute inset-0 bg-gradient-to-br from-background via-gray-100 to-gray-200 dark:from-background dark:via-slate-900 dark:to-slate-800 z-0" />
 

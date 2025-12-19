@@ -15,6 +15,16 @@ export function BackgroundMusic() {
     useEffect(() => {
         if (audioRef.current) {
             audioRef.current.volume = 1.0; // Set volume to 100%
+            // Try to autoplay on mount
+            const playPromise = audioRef.current.play();
+            if (playPromise !== undefined) {
+                playPromise.then(() => {
+                    setIsPlaying(true);
+                }).catch((error) => {
+                    console.log("Autoplay prevented:", error);
+                    // Browsers require interaction, but we try anyway
+                });
+            }
         }
     }, []);
 

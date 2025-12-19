@@ -40,6 +40,10 @@ export const metadata: Metadata = {
   },
 };
 
+import { Analytics } from "@vercel/analytics/react";
+
+// ... existing imports
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -57,6 +61,7 @@ export default function RootLayout({
         <Footer />
         <WhatsAppButton />
         <BackgroundMusic />
+        <Analytics />
       </body>
     </html>
   );
