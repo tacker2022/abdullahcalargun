@@ -41,6 +41,7 @@ export const metadata: Metadata = {
 };
 
 import { Analytics } from "@vercel/analytics/react";
+import { SplashScreen } from "@/components/ui/SplashScreen";
 
 // ... existing imports
 
@@ -54,6 +55,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${playfair.variable} antialiased bg-background text-foreground flex flex-col min-h-screen`}
       >
+        <SplashScreen />
         <Header />
         <div className="flex-grow">
           {children}
